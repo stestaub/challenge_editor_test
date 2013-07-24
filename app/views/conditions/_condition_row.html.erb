@@ -1,0 +1,16 @@
+<tr>
+  <td><%= condition.name %></td>
+  <td><%= condition_type_badge(condition) %></td>
+  <%= yield %>
+  <td>
+    <%= link_to condition, class: "btn btn-mini btn-success" do %>
+      <i class="icon-search bigger-120"></i>
+    <% end %>
+    <%= link_to polymorphic_url(condition, action: :edit), class: "btn btn-mini btn-info" do %>
+      <i class="icon-edit bigger-120"></i>
+    <% end %>
+    <%= link_to condition, method: :delete, class: "btn btn-mini btn-danger" do %>
+      <i class="icon-trash bigger-120"></i>
+    <% end %>
+  </td>
+</tr>

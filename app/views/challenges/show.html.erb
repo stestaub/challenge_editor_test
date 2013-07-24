@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @challenge.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @challenge.description %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%= @challenge.points %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @challenge.level %>
+</p>
+
+<%= render('condition_show', condition: @challenge.condition) unless @challenge.condition.nil?  %>
+
+<%= render('shared/code_view', json: @challenge.as_json) %>
+
+<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+<%= link_to 'Back', challenges_path %>

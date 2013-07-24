@@ -1,0 +1,40 @@
+<h1>Challenge</h1>
+
+<p>
+  <b>Title</b><br>
+  {{challenge.title}}
+</p>
+
+<p>
+  <b>Description</b><br>
+  {{challenge.description}}
+</p>
+
+<p>
+  <b>Points</b><br>
+  {{challenge.points}}
+</p>
+
+<p>
+  <b>Level</b><br>
+  {{challenge.level}}
+</p>
+
+<p>
+  <b>Condition weight sum</b><br>
+  {{challenge.condition_weight_sum}}
+</p>
+
+<div class="form-actions">
+  <a href="/challenges/{{challenge.id}}/edit"
+    class="btn btn-primary"><i class="icon-edit"></i>
+    Edit Challenge
+  </a>
+  <button ng-click="destroy()" class="btn btn-danger">
+    <i class="icon-trash"></i> Delete
+  </button>
+  <a href="/challenges" class="btn">
+    Back to challenges
+  </a>
+</div>
+

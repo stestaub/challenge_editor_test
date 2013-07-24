@@ -1,0 +1,10 @@
+<li class="item-red">
+  <label class="inline">
+    <span class="lbl"> <%= subcondition[:name] %></span>
+    <%= hidden_field_tag "#{f.object.class.name.underscore}[sub_conditions_attributes][][id]",
+    	subcondition[:id], class: "_id" %>
+    <%= hidden_field_tag "#{f.object.class.name.underscore}[sub_conditions_attributes][][order]", 
+    	subcondition[:order], class: "_order" %>
+  </label>
+  <%= link_to "Remove", "#", class: "remove_condition pull-right btn btn-danger btn-mini" %> 
+</li>

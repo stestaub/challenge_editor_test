@@ -1,0 +1,47 @@
+<div id="sidebar">
+				
+	<!-- <div id="sidebar-shortcuts">
+		<div id="sidebar-shortcuts-large">
+			<button class="btn btn-small btn-success"><i class="icon-signal"></i></button>
+			<button class="btn btn-small btn-info"><i class="icon-pencil"></i></button>
+			<button class="btn btn-small btn-warning"><i class="icon-group"></i></button>
+			<button class="btn btn-small btn-danger"><i class="icon-cogs"></i></button>
+		</div>
+		<div id="sidebar-shortcuts-mini">
+			<span class="btn btn-success"></span>
+			<span class="btn btn-info"></span>
+			<span class="btn btn-warning"></span>
+			<span class="btn btn-danger"></span>
+		</div>
+	</div> --><!-- #sidebar-shortcuts -->
+
+	<ul class="nav nav-list">
+		
+		<li class="active">
+			<a href="#" class="dropdown-toggle" >
+				<i class="icon-puzzle-piece"></i>
+				<span>Condition Templ</span>
+				<b class="arrow icon-angle-down"></b>
+			</a>
+		  <ul class="submenu">
+		  	<li><%= link_to conditions_path do %><i class="icon-puzzle-piece"></i> All Conditions<% end %></li>
+				<li><%= link_to combined_conditions_path do %><i class="icon-random"></i> Combined Conditions<% end %></li>
+				<li><%= link_to sequence_conditions_path do %><i class="icon-sort-by-order"></i> Sequence Conditions<% end %></li>
+				<li><%= link_to question_conditions_path do %><i class="icon-question"></i> Question Conditions<% end %></li>
+				<li><%= link_to qr_code_conditions_path do %><i class="icon-qrcode"></i> QR Conditions<% end %></li>
+				<li><%= link_to location_conditions_path do %><i class="icon-map-marker"></i> Location Conditions<% end %></li>
+		  </ul>
+		</li>		
+
+		<li>
+			<%= link_to challenges_path do %>
+				<i class="icon-gamepad"></i>
+				<span>Challenges</span>
+			<% end %>
+		</li>		
+	</ul><!--/.nav-list-->
+
+	<div id="sidebar-collapse"><i class="icon-double-angle-left"></i></div>
+
+
+</div><!--/#sidebar-->

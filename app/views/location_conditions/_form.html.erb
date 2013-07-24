@@ -1,0 +1,18 @@
+<%= simple_nested_form_for(@location_condition) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<%= render 'shared/condition_fields', f: f %>
+    <%= f.input :location %>
+    <%= f.input :radius %>
+    <%= f.fields_for :feedback_items do |form| %>
+      <%= render 'shared/feedback_item_fields', f: form %>
+    <% end %>
+    <p><%= f.link_to_add "Add a Feedback Item", :feedback_items %></p>
+  </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

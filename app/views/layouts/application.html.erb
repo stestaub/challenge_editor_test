@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChallengeEditor</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+</head>	
+<body>
+<%= render 'shared/navbar' %>
+<div class="container-fluid" id="main-container">
+  <%= render 'shared/sidebar' %>
+  <div id="main-content" class="clearfix">
+    <%= render 'shared/breadcrumbs' %>
+    <div id="page-content" class="clearfix">
+    	<%= yield %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag "application" %>
+</body>
+</html>

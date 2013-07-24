@@ -1,0 +1,22 @@
+<%= simple_nested_form_for(@sequence_condition) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<%= render 'shared/condition_fields', f: f %>
+  	<%= f.input :combination_type do %>
+		  <%= f.select :combination_type, [['And', 0],['Or', 1]] %>
+		<% end %>
+		<%= f.input :min_successful_children %>
+
+    <%= render 'shared/subconditions', f: f %>
+    
+		<%= f.fields_for :feedback_items do |form| %>
+			<%= render 'shared/feedback_item_fields', f: form %>
+		<% end %>
+		<p><%= f.link_to_add "Add a Feedback Item", :feedback_items %></p>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

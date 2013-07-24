@@ -1,0 +1,24 @@
+<h1>Listing Combined Conditions</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Combination Type</th>
+    <th>Min. Succ. Children</th>
+    <th></th>
+  </thead>
+  <tbody>
+  <% @combined_conditions.each do |combined_condition| %>
+    <%= render layout: 'conditions/condition_row', locals: { condition: combined_condition } do %>
+      <td><%= combined_condition.combination_type %></td>
+      <td><%= combined_condition.min_successful_children %></td>
+    <% end %>
+  <% end %>
+  </tbody>
+
+</table>
+
+<br />
+
+<%= link_to 'New Combined condition', new_combined_condition_path, class: "btn btn-large btn-success" %>

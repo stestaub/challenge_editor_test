@@ -1,0 +1,2 @@
+module QrCodeConditionsHelper
+end

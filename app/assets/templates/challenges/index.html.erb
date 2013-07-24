@@ -1,0 +1,53 @@
+<div class="page-header position-relative">
+  <h1>Your Drallos</h1>
+</div>
+<div class="row-fluid" ng-controller="ChallengesIndexCtrl">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Points</th>
+        <th>Level</th>
+        <th>Condition weight sum</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="challenge in challenges">
+      <td>
+        <a href="#/challenges/{{challenge._id}}">
+          {{challenge.title}}
+        </a>
+      </td>
+        <td>
+          {{challenge.description}}
+        </td>
+        <td>
+          {{challenge.points}}
+        </td>
+        <td>
+          {{challenge.level}}
+        </td>
+        <td>
+          {{challenge.condition_weight_sum}}
+        </td>
+      <td>
+        <a href="#/challenges/{{challenge._id}}/edit"
+          class="btn btn-mini"><i class="icon-edit"></i>
+          Edit
+        </a>
+        <button ng-click="destroy($index)" class="btn btn-mini btn-danger">
+          <i class="icon-trash"></i> Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <a href='#/challenges/new' class="btn btn-primary">
+    <i class="icon-plus"></i>New
+  </a>
+</p>
+</div>

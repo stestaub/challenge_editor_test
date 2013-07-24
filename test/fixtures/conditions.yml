@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  depth: 1
+  weight: MyString
+
+two:
+  type: 
+  depth: 1
+  weight: MyString

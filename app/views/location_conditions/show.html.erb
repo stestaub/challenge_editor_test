@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class="widget-box">
+  <div class="widget-header widget-header-flat widget-header-small">
+    <h5>
+      <i class="icon-puzzle-piece"></i>
+      Condition Details
+    </h5>
+  </div>
+
+  <div class="widget-body">
+    <div class="widget-main">
+      <strong>Name: </strong><%= @location_condition.name %></br>
+      <strong>Type: </strong><%= @location_condition.type %></br>
+      <strong>Weight: </strong><%= @location_condition.weight %></br>
+      <strong>Points: </strong><%= @location_condition.points %></br>
+      <strong>QR Value: </strong><%= @location_condition.location %></br>
+      <strong>QR Value: </strong><%= @location_condition.radius %>
+    </div><!--/widget-main-->
+  </div><!--/widget-body-->
+</div>
+
+<%= render('shared/code_view', json: @location_condition.as_json) %>
+
+<%= link_to 'Edit', edit_location_condition_path(@location_condition) %> |
+<%= link_to 'Back', location_conditions_path %>

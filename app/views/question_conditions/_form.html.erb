@@ -1,0 +1,31 @@
+<%= simple_nested_form_for(@question_condition) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<%= render 'shared/condition_fields', f: f %>
+
+  	<table id="answers" class="table table-striped table-bordered table-hover">
+  		<thead>
+  			<th>Answers</th>
+  			<th></th>
+  		</thead>
+  		<tbody>
+        <% if @question_condition.correct_answers %>
+  			<% @question_condition.correct_answers.each do |answer| %>
+  				<%= render 'answer_fields', answer: answer %>
+  			<% end %>
+        <% end %>
+  		</tbody>
+  	</table>
+		<%= link_to_add_fields "Add Answer" %>
+
+    <%= f.fields_for :feedback_items do |form| %>
+			<%= render 'shared/feedback_item_fields', f: form %>
+		<% end %>
+		<p><%= f.link_to_add "Add a Feedback Item", :feedback_items %></p>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

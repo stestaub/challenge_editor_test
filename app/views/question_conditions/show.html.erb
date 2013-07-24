@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<div class="widget-box">
+  <div class="widget-header widget-header-flat widget-header-small">
+    <h5>
+      <i class="icon-puzzle-piece"></i>
+      Condition Details
+    </h5>
+  </div>
+
+  <div class="widget-body">
+    <div class="widget-main">
+      <strong>Name: </strong><%= @question_condition.name %></br>
+      <strong>Type: </strong><%= @question_condition.type %></br>
+      <strong>Weight: </strong><%= @question_condition.weight %></br>
+      <strong>Points: </strong><%= @question_condition.points %></br>
+      <strong>Correct Answers: </strong><%= @question_condition.correct_answers %>
+    </div><!--/widget-main-->
+  </div><!--/widget-body-->
+</div>
+
+<%= render('shared/code_view', json: @question_condition.as_json) %>
+
+<%= link_to 'Edit', edit_question_condition_path(@question_condition) %> |
+<%= link_to 'Back', question_conditions_path %>

@@ -1,0 +1,22 @@
+<h1>Listing Question Conditions</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Correct answers</th>
+    <th></th>
+  </thead>
+  <tbody>
+  <% @question_conditions.each do |question_condition| %>
+    <%= render layout: 'conditions/condition_row', locals: { condition: question_condition } do %>
+      <td><%= question_condition.correct_answers %></td>
+    <% end %>
+  <% end %>
+  </tbody>
+
+</table>
+
+<br />
+
+<%= link_to 'New Question condition', new_question_condition_path, class: "btn btn-large btn-success" %>

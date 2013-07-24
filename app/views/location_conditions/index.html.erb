@@ -1,0 +1,24 @@
+<h1>Listing QR Code Conditions</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Location</th>
+    <th>Radius</th>
+    <th></th>
+  </thead>
+  <tbody>
+  <% @location_conditions.each do |location_condition| %>
+    <%= render layout: 'conditions/condition_row', locals: { condition: location_condition }  do %>
+      <td><%= location_condition.location %></td>
+      <td><%= location_condition.radius %></td>
+    <% end %>
+  <% end %>
+  </tbody>
+
+</table>
+
+<br />
+
+<%= link_to 'New Location Condition', new_location_condition_path, class: "btn btn-large btn-success" %>

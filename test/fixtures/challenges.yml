@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  points: 1
+  level: 1
+  condition_weight_sum: 1
+
+two:
+  points: 1
+  level: 1
+  condition_weight_sum: 1

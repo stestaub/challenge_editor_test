@@ -1,0 +1,13 @@
+<%= render 'shared/navbar' %>
+<div class="container-fluid" id="main-container">
+  <%= render 'shared/sidebar' %>
+  <div id="main-content" class="clearfix">
+    <%= render 'shared/breadcrumbs' %>
+    <div id="page-content" class="clearfix" ng-view>
+    	<div class="alert alert-warning">
+				<strong><i class="icon-spinner icon-spin orange bigger-125"></i>  Loading...</strong>
+				Starting up Drallo Editor<br>
+		</div>
+    </div>
+  </div>
+</div>

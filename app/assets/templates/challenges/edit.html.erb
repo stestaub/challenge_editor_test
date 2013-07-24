@@ -1,0 +1,113 @@
+<form name="editChallenge">
+  <div widget-box class="widget-box">
+    <div class="widget-header">
+      <h5>Drallo Details</h5>
+      <div class="widget-toolbar">
+        <a data-action="collapse"><i class="icon-chevron-up"></i></a>
+      </div>
+    </div>
+    
+    <div class="widget-body">
+      <div class="widget-body-inner" style="display: block;">
+        <div class="widget-main">
+
+          <fieldset>
+            <div class="control-group">
+              <label class="control-label">
+                Title
+              </label>
+              <div class="controls">
+                  <input type="text"
+                         name="challenge[title]"
+                         ng-model="challenge.title"
+                         class="text_field"
+                         required>
+                <span ng-show="editChallenge.title.$error.required"
+                      class="help-inline">
+                  Required
+                </span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">
+                Description
+              </label>
+              <div class="controls">
+                  <textarea name="challenge[description]"
+                         ng-model="challenge.description"
+                         class="text_field"
+                         required></textarea>
+                <span ng-show="editChallenge.description.$error.required"
+                      class="help-inline">
+                  Required
+                </span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">
+                Points
+              </label>
+              <div class="controls">
+                  <input type="text"
+                         name="challenge[points]"
+                         ng-model="challenge.points"
+                         class="text_field"
+                         required>
+                <span ng-show="editChallenge.points.$error.required"
+                      class="help-inline">
+                  Required
+                </span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">
+                Level
+              </label>
+              <div class="controls">
+                  <input type="text"
+                         name="challenge[level]"
+                         ng-model="challenge.level"
+                         class="text_field"
+                         required>
+                <span ng-show="editChallenge.level.$error.required"
+                      class="help-inline">
+                  Required
+                </span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">
+                Condition Weight Sum
+              </label>
+              <div class="controls">
+                  <input type="text"
+                         name="challenge[condition_weight_sum]"
+                         ng-model="challenge.condition_weight_sum"
+                         class="text_field"
+                         required>
+                <span ng-show="editChallenge.condition_weight_sum.$error.required"
+                      class="help-inline">
+                  Required
+                </span>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  <div class="form-actions">
+    <button class="btn btn-success" ng-click="update()"
+      ng-disabled="editChallenge.$invalid">
+      Save
+    </button>
+    <button ng-click="destroy()"
+            ng-show="challenge._id"
+            class="btn btn-danger">
+            <i class="icon-trash"></i>Delete
+    </button>
+    <a href="#/challenges" class="btn">
+      Back to challenges
+    </a>
+  </div>
+</form>
+

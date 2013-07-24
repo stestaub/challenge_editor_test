@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  feedbackAppearance: 1
+  actionLink: 1
+  contentHtmlShort: MyString
+  contentHtmlFull: MyString
+
+two:
+  feedbackAppearance: 1
+  actionLink: 1
+  contentHtmlShort: MyString
+  contentHtmlFull: MyString

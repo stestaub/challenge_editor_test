@@ -1,0 +1,22 @@
+<h1>Listing QR Code Conditions</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Qr value</th>
+    <th></th>
+  </thead>
+
+  <tbody>
+  <% @qr_code_conditions.each do |qr_code_condition| %>
+    <%= render layout: 'conditions/condition_row', locals: { condition: qr_code_condition } do %>
+      <td><%= qr_code_condition.qr_value %></td>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Qr code condition', new_qr_code_condition_path, class: "btn btn-large btn-success" %>

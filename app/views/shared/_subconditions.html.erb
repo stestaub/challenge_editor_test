@@ -1,0 +1,38 @@
+<div widget-box class="widget-box">
+  <div class="widget-header">
+    <h5>Sub Conditions</h5>
+    <div class="widget-toolbar">
+      <!-- <a data-action="collapse"><i class="icon-chevron-up"></i></a> -->
+    </div>
+  </div>
+
+  <div class="widget-body">
+    <div class="widget-body-inner" style="display: block;">
+      <div class="widget-main">
+
+        <ul id="conditions" class="item-list ui-sortable">
+          <% f.object.sub_conditions_attributes.each do |sub_condition| %>
+            <%= render 'shared/subcondition_fields', subcondition: sub_condition, f: f %>
+          <% end %>
+        </ul>
+        <div class="spacer"><p>&nbsp;</p></div>
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th></th>
+          </thead>
+          <tbody> 
+          <% Condition.all_except_subs_of(f.object).each do |condition| %>
+            <tr>
+              <td><%= condition.name %></td>
+              <td><%= condition.type %></td>
+              <td><%= link_to_add_condition condition, f %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

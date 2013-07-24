@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<div class="widget-box">
+  <div class="widget-header widget-header-flat widget-header-small">
+    <h5>
+      <i class="icon-puzzle-piece"></i>
+      Condition Details
+    </h5>
+  </div>
+
+  <div class="widget-body">
+    <div class="widget-main">
+      <strong>Name: </strong><%= @combined_condition.name %></br>
+      <strong>Type: </strong><%= @combined_condition.type %></br>
+      <strong>Weight: </strong><%= @combined_condition.weight %></br>
+      <strong>Points: </strong><%= @combined_condition.points %></br>
+      <strong>Combination Type: </strong><%= @combined_condition.combination_type %>
+    </div><!--/widget-main-->
+  </div><!--/widget-body-->
+</div>
+
+<h2>Sub Conditions</h2>
+<table class="table table-bordered table-hover">
+	<thead>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Order</th>
+	</thead>
+	<tbody>
+		<% @combined_condition.sub_conditions.each do |sub_condition| %>
+			<tr>
+				<td>
+					<%= sub_condition.name %>
+				</td>
+				<td>
+					<%= sub_condition.type %>
+				</td>
+				<td>
+					<%= sub_condition.sort_order %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<%= render('shared/code_view', json: @combined_condition.as_json) %>
+<%= link_to 'Edit', edit_combined_condition_path(@combined_condition) %> |
+<%= link_to 'Back', combined_conditions_path %>

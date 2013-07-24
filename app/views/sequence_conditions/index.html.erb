@@ -1,0 +1,24 @@
+<h1>Listing Sequence Conditions</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Combination Type</th>
+    <th>Min. Succ. Children</th>
+    <th></th>
+  </thead>
+  <tbody>
+  <% @sequence_conditions.each do |sequence_condition| %>
+    <%= render layout: 'conditions/condition_row', locals: { condition: sequence_condition } do %>
+      <td><%= sequence_condition.combination_type %></td>
+      <td><%= sequence_condition.min_successful_children %></td>
+    <% end %>
+  <% end %>
+  </tbody>
+
+</table>
+
+<br />
+
+<%= link_to 'New Sequence condition', new_sequence_condition_path, class: "btn btn-large btn-success" %>
